@@ -9,7 +9,7 @@
 `Unity` `ShaderLab`
 
 # Short Description
-raymarchingを試しに使ってみたもの
+raymarchingを試しに実装したもの
 
 post-processing stack(v2)とUnityChanを利用して作成。
 
