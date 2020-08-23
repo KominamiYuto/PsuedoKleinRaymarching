@@ -9,14 +9,13 @@
 `Unity` `ShaderLab`
 
 # Short Description
-raymarchingを使用したもの
-Unity 2018.3.14.fで作成
+raymarchingとpost-processing stack(v2)を利用して作成。
+
+Unity 2018.3.14.fで動作
 
 # Minimal Example
 
 ![Minimal Example](raymarching.png)
-
-お
 
 # Contributors
 - [KominamiYuto](https://github.com/KominamiYuto)
