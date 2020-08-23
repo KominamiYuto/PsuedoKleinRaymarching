@@ -1,0 +1,45 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSUpdate
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+struct Particles {
+    float3 worldpos;
+    float3 rotate;
+    float3 velocity;
+    float gravity;
+    float scale;
+    float time;
+    int active;
+    float3 _deltarotate;
+    float _deltascale;
+    float _deltagravity;
+};
+RWStructuredBuffer<Particles> Result;
+float _deltatime;
+
+[numthreads(32,1,1)]
+void CSUpdate (uint id : SV_DispatchThreadID)
+{
+    Particles p = Result[id];
+    p.gravity += p._deltagravity*_deltatime;
+    p.worldpos += p.velocity*_deltatime + p.gravity*float3(0,-1,0)*_deltatime;
+    p.rotate += p._deltarotate;
+    p.time += _deltatime;
+    p.scale += p._deltascale;
+    if(p.scale<=0){
+        p.active = 0;
+    }
+    float cosx = cos(p.rotate.x);
+    float sinx = sin(p.rotate.x);
+    float cosy = cos(p.rotate.y);
+    float siny = sin(p.rotate.y);
+    float cosz = cos(p.rotate.z);
+    float sinz = sin(p.rotate.z);
+    float4x4 r = float4x4(cosy*cosz,sinx*siny*cosz-cosx*sinz,cosx*siny*cosz + sinx*sinz,0,
+                          cosy*sinz,sinx*siny*sinz+cosx*cosz,cosx*siny*sinz-sinx*cosz,0,
+                          -siny,sinx*cosy,cosx*cosy,0,
+                          0,0,0,1);
+    
+    Result[id] = p;
+}
