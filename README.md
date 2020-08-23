@@ -9,10 +9,12 @@
 `Unity` `ShaderLab`
 
 # Short Description
-raymarchingとpost-processing stack(v2)を利用して作成。
+raymarchingを試しに使ってみたもの
+
+post-processing stack(v2)とUnityChanを利用して作成。
 
 Unity 2018.3.14.fで動作
-
+![Unitychan](https://unity-chan.com/images/imageLicenseLogo.png)
 # Minimal Example
 
 ![Minimal Example](raymarching.png)
