@@ -20,4 +20,4 @@ Unity 2018.3.14.fで動作
 ![Minimal Example](raymarching.png)
 
 # Contributors
-- [KominamiYuto](https://github.com/KominamiYuto)
+- [すなます](https://github.com/snamas)
