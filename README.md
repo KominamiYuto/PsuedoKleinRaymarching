@@ -9,7 +9,8 @@
 `Unity` `ShaderLab`
 
 # Short Description
-raymarchingを試しに実装したもの
+疑似クライン群アルゴリズムを採用した、Unity上で動くレイマーチングレンダラー
+フォワードレンダリングを用いている
 
 post-processing stack(v2)とUnityChanを利用して作成。
 
