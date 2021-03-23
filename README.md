@@ -10,9 +10,10 @@
 
 # Short Description
 疑似クライン群アルゴリズムを採用した、Unity上で動くレイマーチングレンダラー
-フォワードレンダリングを用いている
 
-post-processing stack(v2)とUnityChanを利用して作成。
+フォワードレンダリングを用いて作成した。
+
+post-processing stack(v2)とUnityChanを利用。
 
 Unity 2018.3.14.fで動作
 ![Unitychan](https://unity-chan.com/images/imageLicenseLogo.png)
